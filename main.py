@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
 import json
+import os
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 
 with open('my.json') as user_file:
